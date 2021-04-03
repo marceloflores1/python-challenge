@@ -11,7 +11,7 @@ with open(budgetdata_csv,'r') as csvfile:
     greatest_decrease = 0
     average_change = 0
     for row in csvreader:
-        if months == 0:
+        if months == -1:
             print('Financial Analysis')
             print('----------------------------')
             months += 1
@@ -21,15 +21,15 @@ with open(budgetdata_csv,'r') as csvfile:
             net_profitloss += int(row[1])
             if int(row[1]) > int(greatest_increase):
                 greatest_increase = int(row[1])
-                greatest_increase_name = row[0]
+                greatest_increase_month = row[0]
             if int(row[1]) < int(greatest_decrease):
                 greatest_decrease = int(row[1])
-                greatest_decrease_name = row[0]
-            
+                greatest_decrease_month = row[0]
+    average_change = net_profitloss/months        
     print(f'Total Months: {months}')
     print(f'Total: {net_profitloss}')
     print(f'Average Change: {average_change}')
-    print(f'Greatest Increase in Profits: {greatest_increase_name} {greatest_increase}')
-    print(f'Greatest Decrease in Profits: {greatest_decrease_name} {greatest_decrease}')
+    print(f'Greatest Increase in Profits: {greatest_increase_month} {greatest_increase}')
+    print(f'Greatest Decrease in Profits: {greatest_decrease_month} {greatest_decrease}')
 
     
