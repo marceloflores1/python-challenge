@@ -27,9 +27,16 @@ with open(budgetdata_csv,'r') as csvfile:
                 greatest_decrease_month = row[0]
     average_change = net_profitloss/months        
     print(f'Total Months: {months}')
-    print(f'Total: {net_profitloss}')
-    print(f'Average Change: {average_change}')
-    print(f'Greatest Increase in Profits: {greatest_increase_month} {greatest_increase}')
-    print(f'Greatest Decrease in Profits: {greatest_decrease_month} {greatest_decrease}')
+    print(f'Total: ${net_profitloss}')
+    print(f'Average Change: ${"{:.2f}".format(average_change)}')
+    print(f'Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})')
+    print(f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})')
 
-    
+f = open("Financial Analysis.txt", "w")
+f.write("Financial Analysis")
+f.write("\n----------------------------")    
+f.write(f'\nTotal Months: {months}')
+f.write(f'\nTotal: ${net_profitloss}')
+f.write(f'\nAverage Change: ${"{:.2f}".format(average_change)}')
+f.write(f'\nGreatest Increase in Profits: {greatest_increase_month} (${greatest_increase})')
+f.write(f'\nGreatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})')
