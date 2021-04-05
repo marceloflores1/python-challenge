@@ -23,7 +23,7 @@ for k,v in candidate_dict.items():
 print('----------------------------')
 print(f'Winner: {max(candidate_dict, key=candidate_dict.get)}')
 
-f = open("Analysis/Election Results.txt", "w")
+f = open("Analysis/election_results.txt", "w")
 f.write("Election Results")
 f.write("\n----------------------------")    
 f.write(f'\nTotal Votes: {len(election_dict)}')

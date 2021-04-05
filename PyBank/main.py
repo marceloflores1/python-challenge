@@ -5,6 +5,7 @@ budgetdata_csv = os.path.join('Resources','budget_data.csv')
 
 with open(budgetdata_csv,'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
+    header = next(csvreader)
     months = 0
     net_profitloss = 0
     greatest_increase = 0
@@ -28,7 +29,7 @@ with open(budgetdata_csv,'r') as csvfile:
     print(f'Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})')
     print(f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})')
 
-f = open("Analysis/Financial Analysis.txt", "w")
+f = open("Analysis/financial_analysis.txt", "w")
 f.write("Financial Analysis")
 f.write("\n----------------------------")    
 f.write(f'\nTotal Months: {months}')
