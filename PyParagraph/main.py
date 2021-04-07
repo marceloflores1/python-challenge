@@ -25,3 +25,4 @@ f.write(f'\nApproximate word count: {len(paragraph)}')
 f.write(f'\nApproximate sentence count: {sentence_count}')
 f.write(f'\nAverage Letter Count: {round(wordlenght_total/len(paragraph),1)}')
 f.write(f'\nAverage Sentence Lenght: {round(len(paragraph)/sentence_count,1)}')
+#END

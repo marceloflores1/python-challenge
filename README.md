@@ -11,7 +11,7 @@ Inside this repository there are four folders corresponding to each assignment i
 There is a report that prints to the terminal and exported as a Text file (financial_results.txt) inside Analysis. 
 
 - PyPoll: The objetive is to analyze the polling data of the elections. There is a main Data file (election_data.csv) inside the resources folder, this is analyzed with a Python Script that calculates:
-    ·Total number of votes
+    - Total number of votes
     ·List of candidates that received votes
     ·Percentage of votes per candidate
     ·Number of votes per candidate
@@ -31,3 +31,5 @@ This new format is exported to create a CSV file (employee_data.csv) inside the 
     ·Approximate letter count
     ·Average sentence length
 There is a report that prints to the terminal and exported as a Text file (paragrap_analysis.txt) inside Analysis. 
+
+# END

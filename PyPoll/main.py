@@ -32,3 +32,4 @@ for k,v in candidate_dict.items():
     f.write(f'\n{k}: {"{:.3f}".format(v/len(election_dict)*100)}% ({v})')
 f.write("\n----------------------------")    
 f.write(f'\nWinner: {max(candidate_dict, key=candidate_dict.get)}')    
+#END

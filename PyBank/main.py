@@ -37,3 +37,4 @@ f.write(f'\nTotal: ${net_profitloss}')
 f.write(f'\nAverage Change: ${"{:.2f}".format(average_change)}')
 f.write(f'\nGreatest Increase in Profits: {greatest_increase_month} (${greatest_increase})')
 f.write(f'\nGreatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})')
+#END
