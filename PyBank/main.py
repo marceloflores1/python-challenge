@@ -14,16 +14,20 @@ with open(budgetdata_csv,'r') as csvfile:
     greatest_increase = 0
     greatest_decrease = 0
     average_change = 0
+    change = 0
+    prev_value = 0
     for row in csvreader: #loop through every row
         months += 1 #this will get the total months
         net_profitloss += int(row[1]) #this will get net profit and loss
-        if int(row[1]) > int(greatest_increase): #determine the greatest increase
-            greatest_increase = int(row[1]) 
+        change += int(row[1])-prev_value
+        if (int(row[1])-prev_value) > int(greatest_increase): #determine the greatest increase
+            greatest_increase = int(row[1])-prev_value
             greatest_increase_month = row[0]
-        if int(row[1]) < int(greatest_decrease): #determine the greatest decrease
-            greatest_decrease = int(row[1])
+        if (int(row[1])-prev_value) < int(greatest_decrease): #determine the greatest decrease
+            greatest_decrease = int(row[1])-prev_value
             greatest_decrease_month = row[0]
-    average_change = net_profitloss/months     
+        prev_value = int(row[1])
+    average_change = change/months
 #Printing results in terminal
     print('Financial Analysis')
     print('----------------------------')
