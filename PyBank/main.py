@@ -1,8 +1,11 @@
+#Importing libraries
 import os
 import csv
 
+#Filepath
 budgetdata_csv = os.path.join('Resources','budget_data.csv')
 
+#Read csv file
 with open(budgetdata_csv,'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     header = next(csvreader)
@@ -11,16 +14,17 @@ with open(budgetdata_csv,'r') as csvfile:
     greatest_increase = 0
     greatest_decrease = 0
     average_change = 0
-    for row in csvreader:
-        months += 1
-        net_profitloss += int(row[1])
-        if int(row[1]) > int(greatest_increase):
-            greatest_increase = int(row[1])
+    for row in csvreader: #loop through every row
+        months += 1 #this will get the total months
+        net_profitloss += int(row[1]) #this will get net profit and loss
+        if int(row[1]) > int(greatest_increase): #determine the greatest increase
+            greatest_increase = int(row[1]) 
             greatest_increase_month = row[0]
-        if int(row[1]) < int(greatest_decrease):
+        if int(row[1]) < int(greatest_decrease): #determine the greatest decrease
             greatest_decrease = int(row[1])
             greatest_decrease_month = row[0]
-    average_change = net_profitloss/months        
+    average_change = net_profitloss/months     
+#Printing results in terminal
     print('Financial Analysis')
     print('----------------------------')
     print(f'Total Months: {months}')
@@ -29,6 +33,7 @@ with open(budgetdata_csv,'r') as csvfile:
     print(f'Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})')
     print(f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})')
 
+#Printing results by exporting txt file
 f = open("Analysis/financial_analysis.txt", "w")
 f.write("Financial Analysis")
 f.write("\n----------------------------")    
